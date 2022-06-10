@@ -1,4 +1,4 @@
-name: 'Sign Android release'
+name: 'Obvious - Sign Android'
 description: 'An action to sign an Android release APK or AAB'
 author: 'r0adkll'
 branding:
@@ -54,5 +54,5 @@ outputs:
   signedReleaseFile12:
     description: 'The 12th signed release APK or AAB file'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'lib/main.js'
