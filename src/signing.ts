@@ -15,9 +15,13 @@ export async function signApkFile(
     core.debug("Zipaligning APK file");
 
     // Find zipalign executable
+    console.log(`Current Directory: ${process.cwd()}`)
     const buildToolsVersion = process.env.BUILD_TOOLS_VERSION || '29.0.3';
+    console.log(`BUILD_TOOLS_VERSION: ${buildToolsVersion}`)
     const androidHome = process.env.ANDROID_HOME;
+    console.log(`ANDROID_HOME: ${androidHome}`)
     const buildTools = path.join(androidHome!, `build-tools/${buildToolsVersion}`);
+    console.log(`BUILD_TOOLS: ${buildTools}`)
     if (!fs.existsSync(buildTools)) {
         core.error(`Couldnt find the Android build tools @ ${buildTools}`)
     }
